@@ -1,0 +1,185 @@
+@font-face {
+    font-family: 'ChillaxDisplay';
+    src: url("../fonts/Chillax-Variable.woff2") format("woff2"),
+    url("../fonts/Chillax-Variable.woff") format("woff"),
+    url("../fonts/Chillax-Variable.ttf") format("truetype");
+    font-weight: 200 700;
+    font-display: swap;
+    font-style: normal;
+}
+
+/*VARIABLES*/
+
+:root{
+    --c-dark : #212529;
+    --c-brand: #28a745;
+    --c-brand-light: #09a50f;
+    --c-brand-rgb: 78, 87, 212;
+    --c-body: #27b857;
+    --font-base: "ChillaxDisplay", sans-serif;
+    --box-shadow: 0px 15px 25px rgba(0,0,0,0.08);
+    --transition: all 0.5s ease;
+}
+
+body{
+    font-family: var(--font-base), sans-serif;
+    line-height: 1.7;
+    color: var(--c-dark);
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6{
+    font-weight: 600;
+}
+
+a{
+    text-decoration: none;
+    color: var(--c-brand);
+    transition: var(--transition);
+}
+
+a:hover{
+    color: white !important;
+}
+
+img{
+    max-width: 100%;
+    height:auto;
+}
+
+.section-padding{
+    padding-top: 140px;
+    padding-bottom: 140px;
+}
+
+/*VARIABLES*/
+
+/*NAVBAR*/
+
+.navbar {
+    background-color: #000201;
+}
+
+.navbar-nav .nav-link
+{
+    font-weight: 600;
+    color: var(--c-dark);
+}
+
+.navbar-nav .nav-link.active{
+    color: var(--c-brand);
+}
+.nav-link:hover{
+    color: var(--c-brand-light);
+}
+
+.navbar-toggler{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    transition: .5s ease-in-out;
+
+}
+
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus{
+    outline: none;
+    box-shadow: none;
+    border: 0;
+}
+
+.navbar-toggler span{
+    margin: 0;
+    padding: 0;
+}
+
+.toggler-icon {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: red;
+    border-radius: 50px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+.middle-bar{
+    margin-top: 0;
+}
+
+/*dupa ce apas pe icon*/
+
+.navbar-toggler .top-bar {
+    margin-top: 0;
+    transform: rotate(135deg);
+}
+
+.navbar-toggler .middle-bar{
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.navbar-toggler .bottom-bar{
+    margin-top: 0;
+    transform: rotate(-135deg);
+}
+
+/*cand navbarul e inchis*/
+
+.navbar-toggler.collapsed .top-bar{
+    margin-top: -20px;
+    transform: rotate(0deg);
+}
+.navbar-toggler.collapsed .middle-bar{
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+.navbar-toggler.collapsed .bottom-bar{
+    margin-top: 20px;
+    transform: rotate(0deg);
+}
+/*BUTTONS*/
+
+.btn{
+    font-weight: 500;
+    font-size:14px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    padding: 10px 24px;
+}
+
+.btn-brand{
+    background-color: var(--c-brand);
+    color: black;
+}
+
+.btn-brand:hover{
+    background-color: var(--c-brand-light);
+    border-color: var(--c-brand-light);
+    color: white;
+}
+
+#hero{
+    background:  url("../images/pexels-vahapdmr-16826138.jpg");
+    background-position: bottom;
+    background-size: cover;
+}
+
+.gradient-text{
+    background-image: linear-gradient(to right, #f60202, #232922); /* Gradientul */
+    -webkit-background-clip: text; /* Pentru compatibilitate cu Chrome și Safari */
+    background-clip: text; /* Standard */
+    color: transparent; /* Face textul transparent pentru a vedea gradientul */
+}
+
+/*CARDS*/
+
+
+.card{
+    box-shadow: var(--box-shadow);
+}

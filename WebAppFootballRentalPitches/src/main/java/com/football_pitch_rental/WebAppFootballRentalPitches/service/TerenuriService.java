@@ -24,43 +24,43 @@ public class TerenuriService {
         this.terenuriRepository = terenuriRepository;
     }
 
-    public Page<Teren> findAll(Pageable pageable) {
-        return terenuriRepository.findAll(pageable);
+    public List<Teren> findAll() {
+        return terenuriRepository.findAll();
     }
 
-    public Page<Teren> findByFilters(Map<String,String> filters, Pageable pageable)
-    {
-        return terenuriRepository.findAll(createSpecificationsFromFilters(filters),pageable);
-    }
-
-    private Specification<Teren> createSpecificationsFromFilters(Map<String, String> filters) {
-        return (root, query, criteriaBuilder) -> {
-            List<Predicate> predicates = new ArrayList<>();
-
-            for (Map.Entry<String, String> entry : filters.entrySet()) {
-                String key = entry.getKey();
-                String value = entry.getValue();
-
-                if (key.equalsIgnoreCase("sector")) {
-
-                    String[] sectors = value.split(",");
-                    List<Integer> sectorValues = new ArrayList<>();
-                    for(String sector: sectors)
-                    {
-                        sectorValues.add(Integer.valueOf(sector));
-                    }
-
-                    predicates.add(root.get(key).in(sectorValues));
-                } else if (key.equalsIgnoreCase("pret")) {
-                    predicates.add(criteriaBuilder.lessThanOrEqualTo(root.get(key), Double.parseDouble(value)));
-                } else {
-                    predicates.add(criteriaBuilder.like(criteriaBuilder.lower(root.get(key)), "%" + value.toLowerCase() + "%"));
-                }
-            }
-
-            return criteriaBuilder.and(predicates.toArray(new Predicate[0]));
-        };
-    }
+//    public Page<Teren> findByFilters(Map<String,String> filters, Pageable pageable)
+//    {
+//        return terenuriRepository.findAll(createSpecificationsFromFilters(filters),pageable);
+//    }
+//
+//    private Specification<Teren> createSpecificationsFromFilters(Map<String, String> filters) {
+//        return (root, query, criteriaBuilder) -> {
+//            List<Predicate> predicates = new ArrayList<>();
+//
+//            for (Map.Entry<String, String> entry : filters.entrySet()) {
+//                String key = entry.getKey();
+//                String value = entry.getValue();
+//
+//                if (key.equalsIgnoreCase("sector")) {
+//
+//                    String[] sectors = value.split(",");
+//                    List<Integer> sectorValues = new ArrayList<>();
+//                    for(String sector: sectors)
+//                    {
+//                        sectorValues.add(Integer.valueOf(sector));
+//                    }
+//
+//                    predicates.add(root.get(key).in(sectorValues));
+//                } else if (key.equalsIgnoreCase("pret")) {
+//                    predicates.add(criteriaBuilder.lessThanOrEqualTo(root.get(key), Double.parseDouble(value)));
+//                } else {
+//                    predicates.add(criteriaBuilder.like(criteriaBuilder.lower(root.get(key)), "%" + value.toLowerCase() + "%"));
+//                }
+//            }
+//
+//            return criteriaBuilder.and(predicates.toArray(new Predicate[0]));
+//        };
+//    }
     public void save(Teren teren)
     {
         terenuriRepository.save(teren);

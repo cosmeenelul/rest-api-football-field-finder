@@ -31,12 +31,12 @@ public class Teren {
     @Column(name = "longitudine")
     private Double longitudine;
 
-    @Column(name = "sector")
-    private Integer sector;
+    @Column(name = "ratings")
+    private Double ratings;
 
     public Teren(){}
 
-    public Teren(Long id, String nume, String locatie, String telefon, Integer pretPeOra, Double latitudine, Double longitudine, Integer sector) {
+    public Teren(Long id, String nume, String locatie, String telefon, Integer pretPeOra, Double latitudine, Double longitudine, Double ratings) {
         this.id = id;
         this.nume = nume;
         this.locatie = locatie;
@@ -44,7 +44,7 @@ public class Teren {
         this.pretPeOra = pretPeOra;
         this.latitudine = latitudine;
         this.longitudine = longitudine;
-        this.sector = sector;
+        this.ratings = ratings;
     }
 
     public String getNume() {
@@ -103,12 +103,12 @@ public class Teren {
         return id;
     }
 
-    public Integer getSector() {
-        return sector;
+    public Double getRatings() {
+        return ratings;
     }
 
-    public void setSector(Integer sector) {
-        this.sector = sector;
+    public void setRatings(Double ratings) {
+        this.ratings = ratings;
     }
 
     @Override

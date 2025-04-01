@@ -5,8 +5,8 @@ USE terenuriDB;
 CREATE TABLE(
 	id BIGINT AUTO_INCREMENT PRIMARY KEY,
 	nume VARCHAR(200) NOT NULL,
-	locatie VARCHAR(200) NOT NULL,
-	telefon VARCHAR(10) NOT NULL,
+	locatie VARCHAR(200),
+	telefon VARCHAR(10),
 	pretPeOra DECIMAL(10),
 	latitudine DOUBLE,
 	longitudine DOUBLE
