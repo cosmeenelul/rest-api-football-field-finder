@@ -2,7 +2,7 @@
 This app will centralize all the football fields in Bucharest.
 
 
-# These are some sneak pics on the landing page and the searching page with all the fields got from the MySQL database.
+# Here are some sneak peek pictures of the landing page and the search page, with all the fields retrieved from the MySQL database.
 
 <img width="959" alt="home_desktop" src="https://github.com/user-attachments/assets/727c8b85-5468-4f15-a98b-3cd9f017f549" />
 <img width="312" alt="home_mobile" src="https://github.com/user-attachments/assets/a49602b1-7326-4425-94ad-b78bf5f3d2b2" />
